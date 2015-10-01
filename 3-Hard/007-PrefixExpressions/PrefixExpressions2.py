@@ -12,7 +12,7 @@ else:
     import os
     f = open(os.getcwd() + '/test.txt')
 
-ops = '+*/'
+ops = '+-*/'
 
 for ex in f:
 
@@ -28,6 +28,8 @@ for ex in f:
                 b = stack.pop()
                 if e == '+':
                     stack.append(a+b)
+                if e == '-':
+                    stack.append(a-b)
                 if e == '*':
                     stack.append(a*b)
                 if e == '/':
