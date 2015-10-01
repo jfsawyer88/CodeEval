@@ -1,0 +1,18 @@
+## CodeEval
+## Longest Word
+
+import sys
+
+f = open(sys.argv[1], 'r')
+
+for words in f:
+
+    words = words.strip().split()
+    longest = ''
+    for word in words:
+        if len(longest) < len(word):
+            longest = word
+    sys.stdout.write(longest + "\n")
+
+
+f.close()

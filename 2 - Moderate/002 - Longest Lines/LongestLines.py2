@@ -1,0 +1,21 @@
+## CodeEval
+## Swap Elements
+
+import sys
+import bisect
+
+f = open(sys.argv[1], 'r')
+
+n = int(f.readline())
+
+lines_sorted = []
+for line in f:
+
+    line = line.strip()
+    bisect.insort_right(lines_sorted, [len(line), line])
+
+for i in xrange(n):
+    sys.stdout.write(lines_sorted[-(i+1)][1] + '\n')
+
+
+f.close()

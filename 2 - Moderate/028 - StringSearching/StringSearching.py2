@@ -1,0 +1,19 @@
+## CodeEval
+## String Searching
+
+import sys
+import re
+
+f = open(sys.argv[1], 'r')
+
+for line in f:
+
+    s, pat = line.strip().split(',')
+    pat = re.sub('(?<!\/)\*', '.*', pat)
+    pat = re.sub('\/', '\\\\', pat)
+
+    out = bool(re.search(pat, s))
+    sys.stdout.write(str(out).lower() + '\n')
+
+
+f.close()
