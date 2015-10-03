@@ -1,0 +1,17 @@
+## CodeEval
+## Find A Square
+
+import sys
+
+if 1 == len(sys.argv):
+    f = open(sys.argv[1], 'r')
+else:
+    import os
+    f = open(os.getcwd() + '/test.txt', 'r')
+
+
+for points in f:
+    pass
+
+
+f.close()
