@@ -40,9 +40,9 @@ for points in f:
     if i<3:
         b, c = ps[i]
         d = pd[i]
-        print d == add(a, add(diff(b,a), diff(c,a)))
+        is_square =  d == add(a, add(diff(b,a), diff(c,a)))
 
-
+    sys.stdout.write(str(is_square).lower() + '\n')
 
 
 f.close()
