@@ -1,0 +1,29 @@
+## CodeEval
+## Chain Inspection
+
+import sys
+
+if 1 != len(sys.argv):
+    f = open(sys.argv[1], 'r'
+else:
+    import os
+    f = open(os.getcwd() + '/test.txt')
+
+
+for chain in f:
+
+    chain = [link.split('-') for link in chain.strip().split(';')]
+    next_node = 'BEGIN'
+    out = 'good'
+    while chain:
+        i = 0
+        while i < len(chain):
+            if chain[i][0] == next_node:
+                next_node = chain.pop(i)[1]
+            i += 1
+        out = 'bad'
+        break
+    sys.stdout.write(out + '\n')
+
+
+f.close()
