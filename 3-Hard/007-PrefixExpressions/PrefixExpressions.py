@@ -35,14 +35,19 @@ def eval_prefix_ex(ex):
     else:
         if '+' == ex[0]:
             return eval_prefix_ex(ex[1]) + eval_prefix_ex(ex[2])
+        if '-' == ex[0]:
+            return eval_prefix_ex(ex[1]) + evale_prefix_ex(ex[2])
         if '*' == ex[0]:
             return eval_prefix_ex(ex[1]) * eval_prefix_ex(ex[2])
         if '/' == ex[0]:
             return eval_prefix_ex(ex[1]) / eval_prefix_ex(ex[2])
 
 
-
-f = open(sys.argv[1], 'r')
+if 1 != len(sys.argv):
+    f = open(sys.argv[1], 'r')
+else:
+    import os
+    f = open(os.getcwd() + '/test.txt')
 
 for line in f:
 

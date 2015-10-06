@@ -1,9 +1,15 @@
 ## CodeEval
-## Prime Palindrome
+## Reverse Words
 
 import sys
 
-test_cases = open(sys.argv[1], 'r')
+if 1 != len(sys.argv):
+    test_cases = open(sys.argv[1], 'r')
+else:
+    import os, inspect
+    filename = inspect.getframeinfo(inspect.currentframe()).filename
+    path = os.path.dirname(os.path.abspath(filename))
+    test_cases = open(path + '/test.txt')
 
 i = 0
 for test in test_cases:

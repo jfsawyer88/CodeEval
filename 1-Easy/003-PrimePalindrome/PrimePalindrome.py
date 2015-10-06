@@ -95,4 +95,4 @@ def largest_palprime_below(n):
     return largest_palprime_below_pow10(10**(num_digits-2))
 
 n = 1000 #int(sys.argv[1])
-sys.stdout.write(str(largest_palprime_below(n)))
+sys.stdout.write(str(largest_palprime_below(n)) + '\n')

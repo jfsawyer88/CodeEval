@@ -1,0 +1,50 @@
+## CodeEval
+## Closest Pair
+
+import sys
+
+if 1 != len(sys.argv):
+    f = open(sys.argv[1], 'r')
+else:
+    import os
+    f = open(os.getcwd() + '/test.txt')
+
+
+def dist(p, q):
+    '''returns the euclidian distance
+       between the two given points'''
+    return ((p[0] - q[0])**2 + (p[1] - q[1])**2)**0.5
+
+def closest_pair(points):
+
+    if len(points) == 1:
+        return float('inf')
+    if len(points) == 2:
+        return dist(points[0], points[1])
+
+    l = points[len(points)/2][0]
+    d_l = closest_pair(points[:N/2])
+    d_r = closest_pair(points[N/2:])
+    d = min(d_l, d_r)
+
+    
+
+
+
+
+N = int(f.readline())
+while N != 0:
+    points = sorted([
+                     [
+                      int(c) 
+                      for c in f.readline().strip().split()
+                     ]
+                     for i in xrange(N)
+                    ])
+
+    out = closest_pair(points)
+    N = int(f.readline())
+
+
+
+f.close()

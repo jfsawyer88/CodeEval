@@ -60,4 +60,4 @@ def sum_of_first_primes(n):
     return sum_of_primes_below(init)
 
 
-sys.stdout.write(str(sum_of_first_primes(n)))
+sys.stdout.write(str(sum_of_first_primes(n)) + '\n')
