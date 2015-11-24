@@ -3,12 +3,6 @@
 
 import sys
 
-print
-for line in sys.stdin:
-    print line
-print
-print
-print
 
 if 1 != len(sys.argv):
     test_cases = open(sys.argv[1], 'r')
@@ -17,6 +11,7 @@ else:
     filename = inspect.getframeinfo(inspect.currentframe()).filename
     path = os.path.dirname(os.path.abspath(filename))
     test_cases = open(path + '/test.txt')
+
 
 for test in test_cases:
 

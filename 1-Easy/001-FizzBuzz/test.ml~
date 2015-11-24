@@ -1,0 +1,7 @@
+let quit_loop = false;;
+while not quit_loop do
+  print_string "Have you had enough yet? (y/n) ";
+  let str = read_line () in
+  if str.[0] = 'y' then
+    (* how do I set quit_loop to true ?!? *)
+done;;

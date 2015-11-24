@@ -1,0 +1,29 @@
+## CodeEval
+## One Zero, Two Zeros...
+
+import sys
+
+#test_cases = open(sys.argv[1], 'r')
+
+def increment_vector(v):
+    i = 0
+    while i < len(v):
+        v[i] += 1
+        i += 1
+    return v
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#test_cases.close()

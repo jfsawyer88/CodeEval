@@ -4,10 +4,12 @@
 
 (** returns the integer square root of n **)
 (** i.e. floor(sqrt(n)) **)
+(** rig this up to use pattern matching later? **)
 let  isqrt n =
   let rec loop xk = 
-    let xk1 = (xk + (n / xk)) / 2 in  (** computs the next x value **)
-    if xk1 >= xk then xk              (** compares it with our current x value **)
+    let xk1 = (xk + (n / xk)) / 2 in   (** computs the next x value **)
+    if 1 >= (xk - xk1) then  (** compares it with our current x value **)
+      xk1
     else loop xk1
   in
   loop n
@@ -34,14 +36,6 @@ let is_prime n =
       loop 3 lim                (** initialize loop on i=3 **)
 ;;
 
-(** possibly better is_prime function **)
-(** certainly more elegant **)
-let is_prime n =
-  let rec is_not_divisor d =
-    d * d || (n mod d <> 0) && is_not_divisor (d + 1)
-  in
-  n <> 1 && is_not_divisor 2
-;;
 
 (** reverses digits of input **)
 let reverse_int n =
@@ -77,5 +71,4 @@ let rec loop n =
   else loop (n - 1)
 ;;
 
-print_int (loop 1000);;
-print_newline ()
+print_int (loop 1000)

@@ -1,0 +1,65 @@
+(** CodeEval **)
+(** FizzBuzz **)
+
+
+#load "str.cma";;  (** load str module **)
+
+let sep = Str.regexp " ";;  (** string separator **)
+let split = Str.split sep;; (** splits line on separator **)
+
+let f = Array.get Sys.argv 1;; (** input file **)
+let chan = open_in f;;         (** open file channel **)
+
+let fizzbuzz a b n =
+  for i = 1 to n do
+    if 0 = i mod 3 then
+      if 0 = i mod 5 then
+	print_string "FB"
+      else
+	print_string "F"
+    else
+      if 0 = i mod 5 then
+	print_string "B"
+      else
+	print_int i;
+    if i = n then
+      print_string " "
+  done
+;;
+
+(** loop **)
+
+(**
+this won't work fro some mysterious fucking reason
+'let' expressions seem to be the issue, although
+that is fucking insane
+**)
+(*
+try
+  while true do
+    let l = input_line chan in
+    let l = split l in
+    let l = List.map int_of_string l in
+    print_int (List.nth l 0);
+    let a = List.nth l 0 in
+    let b = List.nth l 1 in
+    let n = List.nth l 2 in
+  done
+with
+  End_of_file -> close_in chan
+;;
+*)
+
+(*
+let newname chan =
+  let l = input_line chan in
+  print_string l
+;;
+ *)
+
+
+
+
+
+
+
