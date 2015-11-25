@@ -1,0 +1,12 @@
+## CodeEval
+## Valid Parenthesis
+
+import sys
+
+expressions = open(sys.argv[1], 'r')
+
+for ex in epxressions:
+    pass
+
+
+expressions.close()
