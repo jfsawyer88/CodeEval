@@ -1,0 +1,14 @@
+## CodeEval
+## Alternative Reality
+
+import sys
+
+goals = open(sys.argv[1], 'r')
+
+for goal in goals:
+    pass
+
+
+
+
+goals.close()
