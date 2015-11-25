@@ -13,7 +13,7 @@ def valid_ex(ex):
         v = [0, 0, 0]
         v[p] += 1
         i = 1
-        while v[p] != 0:
+        while (v[p] != 0) and i < len(ex):
             if ex[i] in '([{':
                 v['([{'.index(ex[i])] += 1
             if ex[i] in ')]}':
