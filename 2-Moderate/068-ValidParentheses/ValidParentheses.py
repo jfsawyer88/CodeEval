@@ -6,6 +6,9 @@ import sys
 
 def valid_ex(ex):
     while ex:
+        if ex[0] in ')]}':
+            return False
+
         p = '([{'.index(ex[0])
         v = [0, 0, 0]
         v[p] += 1
